@@ -1,0 +1,15 @@
+{% extends 'expenses/base.html' %}
+
+{% block content %}
+<div class="card shadow-sm mx-auto" style="max-width: 420px;">
+    <div class="card-header bg-white fw-bold">Login</div>
+    <div class="card-body">
+        <form method="POST" class="d-grid gap-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-dark">Sign In</button>
+        </form>
+        <p class="small text-muted mt-3 mb-0">Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
+    </div>
+</div>
+{% endblock %}
